@@ -60,7 +60,7 @@ deploy:
   - apt update -y
   - apt install -y ruby-dev git 
   - gem install dpl
-  - dpl --provider=heroku --app=lyit-job-portal --api-key=bfc01a35-50de-490e-801c-4ab6d42750c6 --skip-cleanup
+  - dpl --provider=heroku --app=lyit-job-portal --api-key=$heroku_api_key --skip-cleanup
 
 
 
