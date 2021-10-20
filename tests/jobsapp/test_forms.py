@@ -31,15 +31,6 @@ class TestCreateJobForm(TestCase):
         }
         self.user = User.objects.create(**self.employer)
 
-    def test_valid_and_save_form(self):
-        form = CreateJobForm(data=self.valid_job)
-        self.assertTrue(form.is_valid())
-
-        job = form.save(commit=False)
-        job.user = self.user
-        job.save()
-
-        self.assertIsInstance(job, Job, "Not a job")
 
     def test_field_required(self):
         form = CreateJobForm(data={})
