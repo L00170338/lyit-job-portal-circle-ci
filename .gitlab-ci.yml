@@ -19,6 +19,7 @@ cache:
     - venv/
 
 before_script:
+  - apt install python3.8
   - python -V               # Print out python version for debugging
   - pip install virtualenv
   - virtualenv venv
