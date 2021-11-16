@@ -19,7 +19,6 @@ cache:
     - venv/
 
 before_script:
-  - apt install python3.8
   - python -V               # Print out python version for debugging
   - pip install virtualenv
   - virtualenv venv
@@ -58,7 +57,7 @@ pytest:
 newman_tests:
     stage: test
     image:
-        name: postman/newman
+        name: postman/newman_alpine33
         entrypoint: [""]
     script:
         - newman --version
