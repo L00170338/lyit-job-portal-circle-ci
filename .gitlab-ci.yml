@@ -54,6 +54,15 @@ pytest:
 
 
 
+newman_tests:
+    stage: test
+    image:
+        name: postman/newman
+        entrypoint: [""]
+    script:
+        - newman --version
+        - newman run ./tests/LYIT-JOB-PORTAL.postman_collection.json -e ./tests/LYIT-JOB-PORTAL.postman_collection.json
+
 deploy:
   stage: deploy
   script:
