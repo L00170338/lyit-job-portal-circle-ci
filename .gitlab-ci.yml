@@ -29,6 +29,7 @@ stages:
   - build
   - lint
   - test
+  - staging
   - deploy
 
 build:
@@ -64,6 +65,15 @@ newman_tests:
     script:
         - newman --version
         - newman run ./tests/LYIT-JOB-PORTAL.postman_collection.json -e ./tests/LYIT-JOB-PORTAL.postman_collection.json
+
+
+staging:
+  stage: staging
+  script:
+  - apt update -y
+  - apt install -y ruby-dev git 
+  - gem install dpl
+  - dpl --provider=heroku --app=lyit-job-portal-staging --api-key=$heroku_api_key --skip-cleanup
 
 deploy:
   stage: deploy
