@@ -3,10 +3,6 @@
 #image: python:3.8-buster
 image: python:3.8
 
-include:
-    - template: Security/Secret-Detection.gitlab-ci.yml
-      before_script:
-        - ''
 # Change pip's cache directory to be inside the project directory since we can
 # only cache local items.
 variables:
