@@ -4,8 +4,7 @@
 image: python:3.8
 
 include:
-  template: security/Secret-Detection.gitlab-ci.yml
-
+    - template: Security/Secret-Detection.gitlab-ci.yml
 
 # Change pip's cache directory to be inside the project directory since we can
 # only cache local items.
