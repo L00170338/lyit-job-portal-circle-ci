@@ -1,0 +1,748 @@
+{
+	"info": {
+		"_postman_id": "e70928ce-6876-4e42-bde2-87a6930d7c3a",
+		"name": "LYIT-JOB-PORTAL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HOME",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lyit-job-portal.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"lyit-job-portal",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOBS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lyit-job-portal.herokuapp.com/en/jobs/",
+					"protocol": "https",
+					"host": [
+						"lyit-job-portal",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"en",
+						"jobs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REGISTER/EMPLOYEE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lyit-job-portal.herokuapp.com/bn/employee/register/",
+					"protocol": "https",
+					"host": [
+						"lyit-job-portal",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"bn",
+						"employee",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REGISTER/EMPLOYER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://lyit-job-portal.herokuapp.com/bn/employer/register/",
+					"protocol": "https",
+					"host": [
+						"lyit-job-portal",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"bn",
+						"employer",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REGISTERING-EMPLOYEE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "teste",
+							"description": "\n",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "teste",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "teste@post.com",
+							"type": "text"
+						},
+						{
+							"key": "password1",
+							"value": "wagner",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "wagner",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "male",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://lyit-job-portal.herokuapp.com/en/employee/register/",
+					"protocol": "http",
+					"host": [
+						"lyit-job-portal",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"en",
+						"employee",
+						"register",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "REGISTERING-EMPLOYEE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "teste",
+									"description": "\n",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "teste",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "teste@lima.com",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "wagner",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "wagner",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://lyit-job-portal.herokuapp.com/en/employee/register/",
+							"protocol": "http",
+							"host": [
+								"lyit-job-portal",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"en",
+								"employee",
+								"register",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "gunicorn/20.0.4"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Nov 2021 22:44:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie, Origin"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Length",
+							"value": "10695"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "\n\n\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n        <title>\n    Login\n - Django Jobs</title>\n        <meta name=\"description\" content=\"\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"robots\" content=\"all,follow\">\n        <!-- Bootstrap CSS-->\n        <link rel=\"stylesheet\"\n          href=\"/static/vendor/bootstrap/css/bootstrap.min.css\">\n        <!-- Font Awesome CSS-->\n        <link rel=\"stylesheet\"\n          href=\"/static/vendor/font-awesome/css/font-awesome.min.css\">\n        <!-- Google fonts - Roboto for copy, Montserrat for headings-->\n        <link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Roboto:300,400,700\">\n        <link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Montserrat:400,700\">\n        <!-- owl carousel-->\n        <link rel=\"stylesheet\" href=\"/static/vendor/owl.carousel/assets/owl.carousel.css\">\n        <link rel=\"stylesheet\" href=\"/static/vendor/owl.carousel/assets/owl.theme.default.css\">\n        <!-- theme stylesheet-->\n        <link rel=\"stylesheet\" href=\"/static/css/style.default.css\" id=\"theme-stylesheet\">\n        <!-- Custom stylesheet - for your changes-->\n        <link rel=\"stylesheet\" href=\"/static/css/custom.css\">\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css\"/>\n        <!-- Favicon-->\n        <link rel=\"shortcut icon\" href=\"favicon.png\">\n        <!-- Tweaks for older IEs-->\n        <!--[if lt IE 9]>\n        <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\n        <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n        <![endif]-->\n    </head>\n    <body>\n        <!-- navbar-->\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"H4cM1fZ1nmQNpxsb59X3mtyqIDPGdC4iWlxGjLtT5PoJ91i8el6G0oymNnUkVUfW\">\n        <header class=\"header\">\n            <nav class=\"navbar navbar-expand-lg\">\n                <div class=\"container-fluid\">\n                    <a href=\"/en/\" class=\"navbar-brand\">\n                        <img src=\"/static/img/logo-small.png\" alt=\"logo\" class=\"d-none d-lg-block\">\n                        <span class=\"sr-only\">Home</span>\n                    </a>\n                    <button type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\n                    aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"\n                    class=\"navbar-toggler navbar-toggler-right\">Menu\n                        <i class=\"fa fa-bars\"></i>\n                    </button>\n                    <div id=\"navbarSupportedContent\" class=\"collapse navbar-collapse\">\n                        <ul class=\"navbar-nav ml-auto\">\n                            <li class=\"nav-item \">\n                                <a href=\"/en/\" class=\"nav-link\">Home \n                                    <span class=\"sr-only\">(current)</span>\n                                </a>\n                            </li>\n                            <li class=\"nav-item \">\n                                <a href=\"/en/jobs/\" class=\"nav-link\">Jobs</a>\n                            </li>\n                            <li class=\"nav-item\">\n                                <a href=\"/en/about-us/\" class=\"nav-link\">About Us</a>\n                            </li>\n                            <li class=\"nav-item dropdown \">\n                                <a id=\"pages\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"\n                               class=\"nav-link dropdown-toggle \">\n                                    <i class=\"fa fa-signing\"></i>Register\n                                </a>\n                                <div aria-labelledby=\"pages\" class=\"dropdown-menu\">\n                                    <a \n                                    href=\"/en/employee/register/\" \n                                    class=\"dropdown-item \"\n                                >\n                                    Employee\n                                </a>\n                                    <a \n                                    href=\"/en/employer/register/\" \n                                    class=\"dropdown-item \"\n                                >\n                                    Employers\n                                </a>\n                                </div>\n                            </li>\n                            <li class=\"nav-item\" style=\"color: #fff\">\n                                <a \n                                href=\"/en/login/\" \n                                class=\"btn navbar-btn btn-outline-light mb-5 mb-lg-0 active text-primary\"\n                            >\n                                    <i class=\"fa fa-sign-in\"></i>\n                                Login\n                                </a>\n                            </li>\n                            <li class=\"nav-item dropdown\">\n                                <a href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"\n       class=\"nav-link dropdown-toggle has-img mb-3 mb-lg-0 mt-3 mt-lg-0\">\n                                    <em class=\"fa fa-language\"></em>\n        Language\n                                </a>\n                                <form action=\"/i18n/setlang/\" method=\"post\" id=\"change-language-form\">\n                                    <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"H4cM1fZ1nmQNpxsb59X3mtyqIDPGdC4iWlxGjLtT5PoJ91i8el6G0oymNnUkVUfW\">\n                                    <input name=\"next\" type=\"hidden\" value=\"\">\n    \n                                </form>\n                                <div aria-labelledby=\"clientZone\" class=\"dropdown-menu\">\n                                    <a href=\"/en/\" data-lang-code=\"en\" class=\"dropdown-item\">English</a>\n                                    <a href=\"/bn/\" data-lang-code=\"bn\" class=\"dropdown-item\">Bengali</a>\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n            </nav>\n        </header>\n        <div>\n            <div class=\"col-lg-6 offset-3\">\n                <div class=\"box\">\n                    <h3 class=\"heading\">Login</h3>\n                    <p class=\"lead\">Already our have account?</p>\n                    <form action=\"\" method=\"post\">\n                        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"H4cM1fZ1nmQNpxsb59X3mtyqIDPGdC4iWlxGjLtT5PoJ91i8el6G0oymNnUkVUfW\">\n                        <div class=\"form-group\">\n                            <label for=\"id_email\">Email</label>\n                            <input type=\"email\"\n                               class=\"form-control\"\n                               name=\"email\"\n                               id=\"id_email\"\n                               placeholder=\"Enter Email\">\n                    \n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"id_password\">Password</label>\n                            <input type=\"password\"\n                               class=\"form-control\"\n                               name=\"password\"\n                               id=\"id_password\"\n                               placeholder=\"Enter Password\">\n                    \n                        </div>\n                        <div class=\"text-center\">\n                            <button type=\"submit\" class=\"btn btn-outline-white-primary\">\n                                <i class=\"fa fa-sign-in\"></i> Log in\n                            </button>\n                            <br>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/facebook/\" style=\"color:black\">\n                                    <i class=\"fa fa-facebook-square\"></i>Login with Facebook\n                                </a>\n                            </div>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/google-oauth2/\" style=\"color:black\">\n                                    <i class=\"fa fa-google-plus-square\"></i>Login with Google\n                                </a>\n                            </div>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/linkedin-oauth2/\" style=\"color:black\">\n                                    <i class=\"fa fa-linkedin-square\"></i>Login with Linkedin\n                                </a>\n                            </div>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/github/\" style=\"color:black\">\n                                    <i class=\"fa fa-github-square\"></i>Login with Github\n                                </a>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n        <footer class=\"footer\">\n            <div class=\"footer__block\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-4 col-md-12 mb-5\">\n                            <h4 class=\"h5\">About django-jobs</h4>\n                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis\n                        aliquet congue. </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"footer__copyright\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-md-4 text-md-left text-center\">\n                            <p>&copy;2021 django-jobs!</p>\n                        </div>\n                        <div class=\"col-md-8 text-center text-md-right github-buttons\">\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"stars\" src=\"https://img.shields.io/github/stars/manjurulhoque/django-job-portal?style=social\"/>\n                            </a>\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"forks\" src=\"https://img.shields.io/github/forks/manjurulhoque/django-job-portal?style=social\"/>\n                            </a>\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal/issues\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"issues\" src=\"https://img.shields.io/github/issues/manjurulhoque/django-job-portal?style=social\"/>\n                            </a>\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal/#contributors-\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"translation\" src=\"https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square\"/>\n                            </a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </footer>\n        <script src=\"/static/vendor/jquery/jquery.min.js\"></script>\n        <script src=\"/static/vendor/popper.js/umd/popper.min.js\"></script>\n        <script src=\"/static/vendor/bootstrap/js/bootstrap.min.js\"></script>\n        <script src=\"/static/vendor/jquery.cookie/jquery.cookie.js\"></script>\n        <script src=\"/static/vendor/owl.carousel/owl.carousel.min.js\"></script>\n        <script src=\"/static/vendor/bootstrap-select/js/bootstrap-select.min.js\"></script>\n        <script src=\"/static/js/front.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js\"></script>\n        <script type=\"text/javascript\">\n    function changeLanguage(event) {\n    }\n</script>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "REGISTERING-EMPLOYER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "teste",
+							"description": "\n",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "teste",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "teste@limao.com",
+							"type": "text"
+						},
+						{
+							"key": "password1",
+							"value": "wagner",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "wagner",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://lyit-job-portal.herokuapp.com/en/employer/register/",
+					"protocol": "https",
+					"host": [
+						"lyit-job-portal",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"en",
+						"employer",
+						"register",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "REGISTERING-EMPLOYER",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "teste",
+									"description": "\n",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "teste",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "teste@lima.com",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "wagner",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "wagner",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://lyit-job-portal.herokuapp.com/en/employer/register/",
+							"protocol": "https",
+							"host": [
+								"lyit-job-portal",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"en",
+								"employer",
+								"register",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "gunicorn/20.0.4"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Nov 2021 22:44:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie, Origin"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Length",
+							"value": "10695"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "\n\n\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n        <title>\n    Login\n - Django Jobs</title>\n        <meta name=\"description\" content=\"\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"robots\" content=\"all,follow\">\n        <!-- Bootstrap CSS-->\n        <link rel=\"stylesheet\"\n          href=\"/static/vendor/bootstrap/css/bootstrap.min.css\">\n        <!-- Font Awesome CSS-->\n        <link rel=\"stylesheet\"\n          href=\"/static/vendor/font-awesome/css/font-awesome.min.css\">\n        <!-- Google fonts - Roboto for copy, Montserrat for headings-->\n        <link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Roboto:300,400,700\">\n        <link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Montserrat:400,700\">\n        <!-- owl carousel-->\n        <link rel=\"stylesheet\" href=\"/static/vendor/owl.carousel/assets/owl.carousel.css\">\n        <link rel=\"stylesheet\" href=\"/static/vendor/owl.carousel/assets/owl.theme.default.css\">\n        <!-- theme stylesheet-->\n        <link rel=\"stylesheet\" href=\"/static/css/style.default.css\" id=\"theme-stylesheet\">\n        <!-- Custom stylesheet - for your changes-->\n        <link rel=\"stylesheet\" href=\"/static/css/custom.css\">\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css\"/>\n        <!-- Favicon-->\n        <link rel=\"shortcut icon\" href=\"favicon.png\">\n        <!-- Tweaks for older IEs-->\n        <!--[if lt IE 9]>\n        <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\n        <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n        <![endif]-->\n    </head>\n    <body>\n        <!-- navbar-->\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"H4cM1fZ1nmQNpxsb59X3mtyqIDPGdC4iWlxGjLtT5PoJ91i8el6G0oymNnUkVUfW\">\n        <header class=\"header\">\n            <nav class=\"navbar navbar-expand-lg\">\n                <div class=\"container-fluid\">\n                    <a href=\"/en/\" class=\"navbar-brand\">\n                        <img src=\"/static/img/logo-small.png\" alt=\"logo\" class=\"d-none d-lg-block\">\n                        <span class=\"sr-only\">Home</span>\n                    </a>\n                    <button type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\n                    aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"\n                    class=\"navbar-toggler navbar-toggler-right\">Menu\n                        <i class=\"fa fa-bars\"></i>\n                    </button>\n                    <div id=\"navbarSupportedContent\" class=\"collapse navbar-collapse\">\n                        <ul class=\"navbar-nav ml-auto\">\n                            <li class=\"nav-item \">\n                                <a href=\"/en/\" class=\"nav-link\">Home \n                                    <span class=\"sr-only\">(current)</span>\n                                </a>\n                            </li>\n                            <li class=\"nav-item \">\n                                <a href=\"/en/jobs/\" class=\"nav-link\">Jobs</a>\n                            </li>\n                            <li class=\"nav-item\">\n                                <a href=\"/en/about-us/\" class=\"nav-link\">About Us</a>\n                            </li>\n                            <li class=\"nav-item dropdown \">\n                                <a id=\"pages\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"\n                               class=\"nav-link dropdown-toggle \">\n                                    <i class=\"fa fa-signing\"></i>Register\n                                </a>\n                                <div aria-labelledby=\"pages\" class=\"dropdown-menu\">\n                                    <a \n                                    href=\"/en/employee/register/\" \n                                    class=\"dropdown-item \"\n                                >\n                                    Employee\n                                </a>\n                                    <a \n                                    href=\"/en/employer/register/\" \n                                    class=\"dropdown-item \"\n                                >\n                                    Employers\n                                </a>\n                                </div>\n                            </li>\n                            <li class=\"nav-item\" style=\"color: #fff\">\n                                <a \n                                href=\"/en/login/\" \n                                class=\"btn navbar-btn btn-outline-light mb-5 mb-lg-0 active text-primary\"\n                            >\n                                    <i class=\"fa fa-sign-in\"></i>\n                                Login\n                                </a>\n                            </li>\n                            <li class=\"nav-item dropdown\">\n                                <a href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"\n       class=\"nav-link dropdown-toggle has-img mb-3 mb-lg-0 mt-3 mt-lg-0\">\n                                    <em class=\"fa fa-language\"></em>\n        Language\n                                </a>\n                                <form action=\"/i18n/setlang/\" method=\"post\" id=\"change-language-form\">\n                                    <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"H4cM1fZ1nmQNpxsb59X3mtyqIDPGdC4iWlxGjLtT5PoJ91i8el6G0oymNnUkVUfW\">\n                                    <input name=\"next\" type=\"hidden\" value=\"\">\n    \n                                </form>\n                                <div aria-labelledby=\"clientZone\" class=\"dropdown-menu\">\n                                    <a href=\"/en/\" data-lang-code=\"en\" class=\"dropdown-item\">English</a>\n                                    <a href=\"/bn/\" data-lang-code=\"bn\" class=\"dropdown-item\">Bengali</a>\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n            </nav>\n        </header>\n        <div>\n            <div class=\"col-lg-6 offset-3\">\n                <div class=\"box\">\n                    <h3 class=\"heading\">Login</h3>\n                    <p class=\"lead\">Already our have account?</p>\n                    <form action=\"\" method=\"post\">\n                        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"H4cM1fZ1nmQNpxsb59X3mtyqIDPGdC4iWlxGjLtT5PoJ91i8el6G0oymNnUkVUfW\">\n                        <div class=\"form-group\">\n                            <label for=\"id_email\">Email</label>\n                            <input type=\"email\"\n                               class=\"form-control\"\n                               name=\"email\"\n                               id=\"id_email\"\n                               placeholder=\"Enter Email\">\n                    \n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"id_password\">Password</label>\n                            <input type=\"password\"\n                               class=\"form-control\"\n                               name=\"password\"\n                               id=\"id_password\"\n                               placeholder=\"Enter Password\">\n                    \n                        </div>\n                        <div class=\"text-center\">\n                            <button type=\"submit\" class=\"btn btn-outline-white-primary\">\n                                <i class=\"fa fa-sign-in\"></i> Log in\n                            </button>\n                            <br>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/facebook/\" style=\"color:black\">\n                                    <i class=\"fa fa-facebook-square\"></i>Login with Facebook\n                                </a>\n                            </div>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/google-oauth2/\" style=\"color:black\">\n                                    <i class=\"fa fa-google-plus-square\"></i>Login with Google\n                                </a>\n                            </div>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/linkedin-oauth2/\" style=\"color:black\">\n                                    <i class=\"fa fa-linkedin-square\"></i>Login with Linkedin\n                                </a>\n                            </div>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/github/\" style=\"color:black\">\n                                    <i class=\"fa fa-github-square\"></i>Login with Github\n                                </a>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n        <footer class=\"footer\">\n            <div class=\"footer__block\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-4 col-md-12 mb-5\">\n                            <h4 class=\"h5\">About django-jobs</h4>\n                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis\n                        aliquet congue. </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"footer__copyright\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-md-4 text-md-left text-center\">\n                            <p>&copy;2021 django-jobs!</p>\n                        </div>\n                        <div class=\"col-md-8 text-center text-md-right github-buttons\">\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"stars\" src=\"https://img.shields.io/github/stars/manjurulhoque/django-job-portal?style=social\"/>\n                            </a>\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"forks\" src=\"https://img.shields.io/github/forks/manjurulhoque/django-job-portal?style=social\"/>\n                            </a>\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal/issues\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"issues\" src=\"https://img.shields.io/github/issues/manjurulhoque/django-job-portal?style=social\"/>\n                            </a>\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal/#contributors-\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"translation\" src=\"https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square\"/>\n                            </a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </footer>\n        <script src=\"/static/vendor/jquery/jquery.min.js\"></script>\n        <script src=\"/static/vendor/popper.js/umd/popper.min.js\"></script>\n        <script src=\"/static/vendor/bootstrap/js/bootstrap.min.js\"></script>\n        <script src=\"/static/vendor/jquery.cookie/jquery.cookie.js\"></script>\n        <script src=\"/static/vendor/owl.carousel/owl.carousel.min.js\"></script>\n        <script src=\"/static/vendor/bootstrap-select/js/bootstrap-select.min.js\"></script>\n        <script src=\"/static/js/front.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js\"></script>\n        <script type=\"text/javascript\">\n    function changeLanguage(event) {\n    }\n</script>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "SENDING-LOGIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "teste@limao.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "wagner",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://lyit-job-portal.herokuapp.com/en/login/",
+					"protocol": "https",
+					"host": [
+						"lyit-job-portal",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"en",
+						"login",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SENDING-LOGIN",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "teste",
+									"description": "\n",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "teste",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "teste@lima.com",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "wagner",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "wagner",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://lyit-job-portal.herokuapp.com/en/employer/register/",
+							"protocol": "https",
+							"host": [
+								"lyit-job-portal",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"en",
+								"employer",
+								"register",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "gunicorn/20.0.4"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Nov 2021 22:44:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie, Origin"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Length",
+							"value": "10695"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "\n\n\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n        <title>\n    Login\n - Django Jobs</title>\n        <meta name=\"description\" content=\"\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta name=\"robots\" content=\"all,follow\">\n        <!-- Bootstrap CSS-->\n        <link rel=\"stylesheet\"\n          href=\"/static/vendor/bootstrap/css/bootstrap.min.css\">\n        <!-- Font Awesome CSS-->\n        <link rel=\"stylesheet\"\n          href=\"/static/vendor/font-awesome/css/font-awesome.min.css\">\n        <!-- Google fonts - Roboto for copy, Montserrat for headings-->\n        <link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Roboto:300,400,700\">\n        <link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Montserrat:400,700\">\n        <!-- owl carousel-->\n        <link rel=\"stylesheet\" href=\"/static/vendor/owl.carousel/assets/owl.carousel.css\">\n        <link rel=\"stylesheet\" href=\"/static/vendor/owl.carousel/assets/owl.theme.default.css\">\n        <!-- theme stylesheet-->\n        <link rel=\"stylesheet\" href=\"/static/css/style.default.css\" id=\"theme-stylesheet\">\n        <!-- Custom stylesheet - for your changes-->\n        <link rel=\"stylesheet\" href=\"/static/css/custom.css\">\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css\"/>\n        <!-- Favicon-->\n        <link rel=\"shortcut icon\" href=\"favicon.png\">\n        <!-- Tweaks for older IEs-->\n        <!--[if lt IE 9]>\n        <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\n        <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n        <![endif]-->\n    </head>\n    <body>\n        <!-- navbar-->\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"H4cM1fZ1nmQNpxsb59X3mtyqIDPGdC4iWlxGjLtT5PoJ91i8el6G0oymNnUkVUfW\">\n        <header class=\"header\">\n            <nav class=\"navbar navbar-expand-lg\">\n                <div class=\"container-fluid\">\n                    <a href=\"/en/\" class=\"navbar-brand\">\n                        <img src=\"/static/img/logo-small.png\" alt=\"logo\" class=\"d-none d-lg-block\">\n                        <span class=\"sr-only\">Home</span>\n                    </a>\n                    <button type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\"\n                    aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"\n                    class=\"navbar-toggler navbar-toggler-right\">Menu\n                        <i class=\"fa fa-bars\"></i>\n                    </button>\n                    <div id=\"navbarSupportedContent\" class=\"collapse navbar-collapse\">\n                        <ul class=\"navbar-nav ml-auto\">\n                            <li class=\"nav-item \">\n                                <a href=\"/en/\" class=\"nav-link\">Home \n                                    <span class=\"sr-only\">(current)</span>\n                                </a>\n                            </li>\n                            <li class=\"nav-item \">\n                                <a href=\"/en/jobs/\" class=\"nav-link\">Jobs</a>\n                            </li>\n                            <li class=\"nav-item\">\n                                <a href=\"/en/about-us/\" class=\"nav-link\">About Us</a>\n                            </li>\n                            <li class=\"nav-item dropdown \">\n                                <a id=\"pages\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"\n                               class=\"nav-link dropdown-toggle \">\n                                    <i class=\"fa fa-signing\"></i>Register\n                                </a>\n                                <div aria-labelledby=\"pages\" class=\"dropdown-menu\">\n                                    <a \n                                    href=\"/en/employee/register/\" \n                                    class=\"dropdown-item \"\n                                >\n                                    Employee\n                                </a>\n                                    <a \n                                    href=\"/en/employer/register/\" \n                                    class=\"dropdown-item \"\n                                >\n                                    Employers\n                                </a>\n                                </div>\n                            </li>\n                            <li class=\"nav-item\" style=\"color: #fff\">\n                                <a \n                                href=\"/en/login/\" \n                                class=\"btn navbar-btn btn-outline-light mb-5 mb-lg-0 active text-primary\"\n                            >\n                                    <i class=\"fa fa-sign-in\"></i>\n                                Login\n                                </a>\n                            </li>\n                            <li class=\"nav-item dropdown\">\n                                <a href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"\n       class=\"nav-link dropdown-toggle has-img mb-3 mb-lg-0 mt-3 mt-lg-0\">\n                                    <em class=\"fa fa-language\"></em>\n        Language\n                                </a>\n                                <form action=\"/i18n/setlang/\" method=\"post\" id=\"change-language-form\">\n                                    <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"H4cM1fZ1nmQNpxsb59X3mtyqIDPGdC4iWlxGjLtT5PoJ91i8el6G0oymNnUkVUfW\">\n                                    <input name=\"next\" type=\"hidden\" value=\"\">\n    \n                                </form>\n                                <div aria-labelledby=\"clientZone\" class=\"dropdown-menu\">\n                                    <a href=\"/en/\" data-lang-code=\"en\" class=\"dropdown-item\">English</a>\n                                    <a href=\"/bn/\" data-lang-code=\"bn\" class=\"dropdown-item\">Bengali</a>\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n            </nav>\n        </header>\n        <div>\n            <div class=\"col-lg-6 offset-3\">\n                <div class=\"box\">\n                    <h3 class=\"heading\">Login</h3>\n                    <p class=\"lead\">Already our have account?</p>\n                    <form action=\"\" method=\"post\">\n                        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"H4cM1fZ1nmQNpxsb59X3mtyqIDPGdC4iWlxGjLtT5PoJ91i8el6G0oymNnUkVUfW\">\n                        <div class=\"form-group\">\n                            <label for=\"id_email\">Email</label>\n                            <input type=\"email\"\n                               class=\"form-control\"\n                               name=\"email\"\n                               id=\"id_email\"\n                               placeholder=\"Enter Email\">\n                    \n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"id_password\">Password</label>\n                            <input type=\"password\"\n                               class=\"form-control\"\n                               name=\"password\"\n                               id=\"id_password\"\n                               placeholder=\"Enter Password\">\n                    \n                        </div>\n                        <div class=\"text-center\">\n                            <button type=\"submit\" class=\"btn btn-outline-white-primary\">\n                                <i class=\"fa fa-sign-in\"></i> Log in\n                            </button>\n                            <br>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/facebook/\" style=\"color:black\">\n                                    <i class=\"fa fa-facebook-square\"></i>Login with Facebook\n                                </a>\n                            </div>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/google-oauth2/\" style=\"color:black\">\n                                    <i class=\"fa fa-google-plus-square\"></i>Login with Google\n                                </a>\n                            </div>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/linkedin-oauth2/\" style=\"color:black\">\n                                    <i class=\"fa fa-linkedin-square\"></i>Login with Linkedin\n                                </a>\n                            </div>\n                            <div class=\"btn btn-outline-white-primary btn-sm\" style=\"border-color:black\">\n                                <a href=\"/social-auth/login/github/\" style=\"color:black\">\n                                    <i class=\"fa fa-github-square\"></i>Login with Github\n                                </a>\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n        <footer class=\"footer\">\n            <div class=\"footer__block\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-4 col-md-12 mb-5\">\n                            <h4 class=\"h5\">About django-jobs</h4>\n                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis\n                        aliquet congue. </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"footer__copyright\">\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-md-4 text-md-left text-center\">\n                            <p>&copy;2021 django-jobs!</p>\n                        </div>\n                        <div class=\"col-md-8 text-center text-md-right github-buttons\">\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"stars\" src=\"https://img.shields.io/github/stars/manjurulhoque/django-job-portal?style=social\"/>\n                            </a>\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"forks\" src=\"https://img.shields.io/github/forks/manjurulhoque/django-job-portal?style=social\"/>\n                            </a>\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal/issues\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"issues\" src=\"https://img.shields.io/github/issues/manjurulhoque/django-job-portal?style=social\"/>\n                            </a>\n                            <a href=\"https://github.com/manjurulhoque/django-job-portal/#contributors-\" target=\"_blank\" rel=\"noopener\">\n                                <img alt=\"translation\" src=\"https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square\"/>\n                            </a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </footer>\n        <script src=\"/static/vendor/jquery/jquery.min.js\"></script>\n        <script src=\"/static/vendor/popper.js/umd/popper.min.js\"></script>\n        <script src=\"/static/vendor/bootstrap/js/bootstrap.min.js\"></script>\n        <script src=\"/static/vendor/jquery.cookie/jquery.cookie.js\"></script>\n        <script src=\"/static/vendor/owl.carousel/owl.carousel.min.js\"></script>\n        <script src=\"/static/vendor/bootstrap-select/js/bootstrap-select.min.js\"></script>\n        <script src=\"/static/js/front.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js\"></script>\n        <script type=\"text/javascript\">\n    function changeLanguage(event) {\n    }\n</script>\n    </body>\n</html>"
+				}
+			]
+		}
+	]
+}
