@@ -1,110 +1,87 @@
-# Tagged releases of Python docker images can be found at:
-# https://hub.docker.com/r/library/python/tags/
-#image: python:3.8-buster
+# You can override the included template(s) by including variable overrides
+# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
+# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
+# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
+# Note that environment variables can be set in several places
+# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 image: python:3.8
-
-# Change pip's cache directory to be inside the project directory since we can
-# only cache local items.
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-
-# Pip's cache doesn't store the python packages
-# https://pip.pypa.io/en/stable/reference/pip_install/#caching
-#
-# If you want to also cache the installed packages, you have to install
-# them in a virtualenv and cache it as well.
 cache:
   paths:
-    - .cache/pip
-    - venv/
-
+  - ".cache/pip"
+  - venv/
 before_script:
-  - python -V               # Print out python version for debugging
-  - pip install virtualenv
-  - virtualenv venv
-  - source venv/bin/activate
-
-
+- python -V
+- pip install virtualenv
+- virtualenv venv
+- source venv/bin/activate
 stages:
-  - build
-  - lint
-  - test
-  - staging
-  - deploy
-
+- build
+- lint
+- test
+- staging
+- deploy
 build:
   stage: build
   script:
-    - source venv/bin/activate
-    - pip install -r requirements.txt
-    - python manage.py migrate
-
-
-
+  - source venv/bin/activate
+  - pip install -r requirements.txt
+  - python manage.py migrate
 flake8:
   stage: lint
   script:
-    - source venv/bin/activate
-    - flake8 --max-line-length=150 --ignore=E266,E501,E712,F811 *.py
-
+  - source venv/bin/activate
+  - flake8 --max-line-length=150 --ignore=E266,E501,E712,F811 *.py
 pytest:
   stage: test
   script:
-    - source venv/bin/activate
-    - python manage.py test --settings=jobs.settings -v3
-
-
-
+  - source venv/bin/activate
+  - python manage.py test --settings=jobs.settings -v3
 newman_tests:
-    stage: test
-    before_script:
-      - ''
-    image:
-        name: postman/newman_alpine33
-        entrypoint: [""]
-    script:
-        - newman --version
-        - newman run ./tests/LYIT-JOB-PORTAL.postman_collection.json -e ./tests/LYIT-JOB-PORTAL.postman_collection.json
-
-
+  stage: test
+  before_script:
+  - ''
+  image:
+    name: postman/newman_alpine33
+    entrypoint:
+    - ''
+  script:
+  - newman --version
+  - newman run ./tests/LYIT-JOB-PORTAL.postman_collection.json -e ./tests/LYIT-JOB-PORTAL.postman_collection.json
 staging:
   stage: staging
   script:
   - apt update -y
-  - apt install -y ruby-dev git 
+  - apt install -y ruby-dev git
   - gem install dpl
-  - dpl --provider=heroku --app=lyit-job-portal-staging --api-key=$heroku_api_key --skip-cleanup
-
+  - dpl --provider=heroku --app=lyit-job-portal-staging --api-key=$heroku_api_key
+    --skip-cleanup
 deploy:
   stage: deploy
   script:
   - apt update -y
-  - apt install -y ruby-dev git 
+  - apt install -y ruby-dev git
   - gem install dpl
   - dpl --provider=heroku --app=lyit-job-portal --api-key=$heroku_api_key --skip-cleanup
-
-
 include:
- - template: Jobs/Code-Quality.gitlab-ci.yml
- - template: Security/Secret-Detection.gitlab-ci.yml
- - template: Security/SAST.gitlab-ci.yml
-
-# https://docs.gitlab.com/ee/user/application_security/sast/
+- template: Jobs/Code-Quality.gitlab-ci.yml
+- template: Security/Secret-Detection.gitlab-ci.yml
+- template: Security/SAST.gitlab-ci.yml
+- template: Auto-DevOps.gitlab-ci.yml
 sast:
   stage: test
   variables:
-    CI_DEBUG_TRACE: "false"
+    CI_DEBUG_TRACE: 'false'
   artifacts:
     paths:
-      - gl-sast-report.json
-    expire_in: 1 week 
-
-# https://docs.gitlab.com/ee/user/application_security/secret_detection/
+    - gl-sast-report.json
+    expire_in: 1 week
 secret_detection:
   stage: test
   variables:
-    SECRET_DETECTION_HISTORIC_SCAN: "true"
+    SECRET_DETECTION_HISTORIC_SCAN: 'true'
   artifacts:
     paths:
-      - gl-secret-detection-report.json
+    - gl-secret-detection-report.json
     expire_in: 1 week
