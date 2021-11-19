@@ -56,7 +56,13 @@ steps:
   displayName: 'Running Unit tests'
 
 - script: |
-    pflake8 --max-line-length=150 --ignore=E266,E501,E712,F811 *.py
+    flake8 --max-line-length=150 --ignore=E266,E501,E712,F811 *.py
+  displayName: 'Running Lint  tests'
+
+- script: |
+    npm install newman
+    newman --version
+    newman run ./tests/LYIT-JOB-PORTAL.postman_collection.json -e ./tests/LYIT-JOB-PORTAL.postman_collection.json
   displayName: 'Running Lint  tests'
 
 - script: |
