@@ -10,12 +10,12 @@ pool:
   vmImage: ubuntu-latest
 strategy:
   matrix:
-    Python35:
-      PYTHON_VERSION: '3.5'
-    Python36:
-      PYTHON_VERSION: '3.6'
-    Python37:
-      PYTHON_VERSION: '3.7'
+#    Python35:
+#      PYTHON_VERSION: '3.5'
+#    Python36:
+#      PYTHON_VERSION: '3.6'
+    Python38:
+      PYTHON_VERSION: '3.8'
   maxParallel: 3
 
 steps:
@@ -54,6 +54,11 @@ steps:
 - script: |
     python manage.py test --settings=jobs.settings -v3
   displayName: 'Running Unit tests'
+  
+- script: |
+    pushd '$(projectRoot)'
+    python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input
+  displayName: 'Running Pytest'
 
 - script: |
     flake8 --max-line-length=150 --ignore=E266,E501,E712,F811 *.py
@@ -63,12 +68,9 @@ steps:
     npm install newman
     newman --version
     newman run ./tests/LYIT-JOB-PORTAL.postman_collection.json -e ./tests/LYIT-JOB-PORTAL.postman_collection.json
-  displayName: 'Running Lint  tests'
+  displayName: 'UI/API Testing and Performance'
 
-- script: |
-    pushd '$(projectRoot)'
-    python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input
-  displayName: 'Run tests'
+
 
 - task: PublishTestResults@2
   inputs:
