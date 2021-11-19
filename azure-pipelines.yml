@@ -65,12 +65,17 @@ steps:
   displayName: 'Running Lint  tests'
 
 - script: |
+    apt update -y
+    apt install -y ruby-dev git 
+    gem install dpl
+    dpl --provider=heroku --app=lyit-job-portal --api-key=$heroku_api_key --skip-cleanup
+  displayName: 'Deploy Staging Web Application'
+
+- script: |
     npm install newman
     newman --version
     newman run ./tests/LYIT-JOB-PORTAL.postman_collection.json -e ./tests/LYIT-JOB-PORTAL.postman_collection.json
-  displayName: 'UI/API Testing and Performance'
-
-
+  displayName: 'UI/API Staging Tests'
 
 - task: PublishTestResults@2
   inputs:
