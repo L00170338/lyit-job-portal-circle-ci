@@ -68,7 +68,7 @@ steps:
     sudo apt update -y
     sudo apt install -y ruby-dev git 
     sudo gem install dpl
-    dpl --provider=heroku --app=lyit-job-portal --api-key=4bf1b746-b80c-4367-b2d9-604aa01b16c3 --skip-cleanup
+    sudo dpl --provider=heroku --app=lyit-job-portal --api-key=4bf1b746-b80c-4367-b2d9-604aa01b16c3 --skip-cleanup
   displayName: 'Deploy Staging Web Application'
 
 - script: |
