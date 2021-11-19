@@ -85,8 +85,7 @@ deploy:
 
 
 include:
- - template: Jobs/Code-Quality.gitlab-ci.yml
- - template: Security/Secret-Detection.gitlab-ci.yml
+ #- template: Security/Secret-Detection.gitlab-ci.yml
  - template: Security/SAST.gitlab-ci.yml
 
 # https://docs.gitlab.com/ee/user/application_security/sast/
@@ -100,11 +99,11 @@ sast:
     expire_in: 1 week 
 
 # https://docs.gitlab.com/ee/user/application_security/secret_detection/
-secret_detection:
-  stage: test
-  variables:
-    SECRET_DETECTION_HISTORIC_SCAN: "true"
-  artifacts:
-    paths:
-      - gl-secret-detection-report.json
-    expire_in: 1 week
+#secret_detection:
+#  stage: test
+#  variables:
+#    SECRET_DETECTION_HISTORIC_SCAN: "true"
+#  artifacts:
+#    paths:
+#      - gl-secret-detection-report.json
+#    expire_in: 1 week
