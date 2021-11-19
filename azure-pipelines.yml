@@ -47,6 +47,19 @@ steps:
   displayName: 'Install prerequisites'
 
 - script: |
+    python manage.py migrate
+  displayName: 'Building Applicattion'
+
+
+- script: |
+    python manage.py test --settings=jobs.settings -v3
+  displayName: 'Running Unit tests'
+
+- script: |
+    pflake8 --max-line-length=150 --ignore=E266,E501,E712,F811 *.py
+  displayName: 'Running Lint  tests'
+
+- script: |
     pushd '$(projectRoot)'
     python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input
   displayName: 'Run tests'
